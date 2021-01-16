@@ -1,4 +1,4 @@
-# Hackaton CCR 2021 - Novos caminhso para a juventude
+# Hackaton CCR 2021 - Novos caminhos para a juventude
 
 Um evento 100% online que vai reunir profissionais, empreendedores e entusiastas em educação e inclusão, voltados para projetos relacionados à educação, cultura, empregabilidade e geração de renda para pensar em soluções que proporcionem mais espaço para os jovens em setores essenciais da nossa sociedade.
 

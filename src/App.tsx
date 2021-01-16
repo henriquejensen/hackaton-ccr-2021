@@ -1,10 +1,9 @@
 import React from 'react';
+import Router from './router'
 
 function App() {
   return (
-    <div>
-      Comunidade de artesanato
-    </div>
+    <Router />
   );
 }
 
