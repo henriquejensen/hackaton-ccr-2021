@@ -1,9 +1,13 @@
-import React from 'react';
-import Router from './router'
+import React from "react";
+import { Container } from "@material-ui/core";
+
+import Router from "./router";
 
 function App() {
   return (
-    <Router />
+    <Container>
+      <Router />
+    </Container>
   );
 }
 
