@@ -20,7 +20,8 @@ const product = {
     Tamanho Infantil 22cm x 12cm.
     Tamanho Adulto 26cm x 14cm.
     `,
-  image: "https://i.ytimg.com/vi/eSXu5BZSBHo/maxresdefault.jpg",
+  image:
+    "https://img.elo7.com.br/product/zoom/2ABBE80/mascara-cirurgica-de-tecido-mascara-para-esteticista.jpg",
   number: 10,
   price: 30.5,
   seller: "Loja da Bia",

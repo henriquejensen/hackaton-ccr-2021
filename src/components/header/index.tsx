@@ -18,7 +18,7 @@ function Header() {
   const iconStyle = { fontSize: 40 };
   return (
     <section className={classes.container}>
-      <img className={classes.logo} src={Logo} height="100" alt="Loop logo" />
+      <img className={classes.logo} src={Logo} height="140" alt="Loop logo" />
       <div className={classes.icons}>
         <Link to="/">
           <span className={classes.icon}>
@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
   icons: {
     display: "flex",
     fontSize: 30,
+    alignItems: "center",
   },
   icon: {
     color: "black",
