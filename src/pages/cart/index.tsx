@@ -3,6 +3,8 @@ import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 import { AppContext } from "../../store";
 import Button from "../../components/button";
@@ -22,15 +24,29 @@ const useStyles = makeStyles((theme) => ({
   container: {
     paddingTop: 20,
   },
+  numberOfProducts: {
+    display: "flex",
+    alignItems: "center",
+  },
+  number: {
+    backgroundColor: "white",
+    padding: "5px 15px",
+    borderRadius: 10,
+  },
 }));
 
 function Cart() {
   const classes = useStyles();
+  const [numberOfProducts, setNumberOfProducts] = React.useState(1);
   const { state, dispatch } = React.useContext(AppContext);
   const { shoppingCart: products } = state;
-  const image = products[0]?.image;
+  const product = products[0];
+  const image = product?.image;
 
   const deleteProduct = () => dispatch({ type: Types.Delete });
+  const decreaseNumber = () =>
+    numberOfProducts - 1 && setNumberOfProducts(numberOfProducts - 1);
+  const increaseNumber = () => setNumberOfProducts(numberOfProducts + 1);
 
   return (
     <section>
@@ -46,6 +62,7 @@ function Cart() {
             <Typography variant="h6" component="h2">
               Nome
             </Typography>
+            <span>{product?.name}</span>
           </Grid>
           <Grid item xs={2}>
             <Typography variant="h6" component="h2">
@@ -56,11 +73,21 @@ function Cart() {
             <Typography variant="h6" component="h2">
               Quantidade
             </Typography>
+            <div className={classes.numberOfProducts}>
+              <span onClick={decreaseNumber}>
+                <ArrowBackIosIcon />
+              </span>
+              <span className={classes.number}>{numberOfProducts}</span>
+              <span onClick={increaseNumber}>
+                <ArrowForwardIosIcon />
+              </span>
+            </div>
           </Grid>
           <Grid item xs={2}>
             <Typography variant="h6" component="h2">
               Subtotal
             </Typography>
+            <span>R$ {Number(product?.price || 0) * numberOfProducts}</span>
           </Grid>
         </Grid>
         <div className={classes.wrapperBtn}>

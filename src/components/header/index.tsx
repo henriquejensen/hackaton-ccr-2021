@@ -18,7 +18,10 @@ function Header() {
   const iconStyle = { fontSize: 40 };
   return (
     <section className={classes.container}>
-      <img className={classes.logo} src={Logo} height="140" alt="Loop logo" />
+      <Link to="/">
+        <img className={classes.logo} src={Logo} height="140" alt="Loop logo" />
+      </Link>
+
       <div className={classes.icons}>
         <Link to="/">
           <span className={classes.icon}>
