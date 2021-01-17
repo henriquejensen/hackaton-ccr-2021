@@ -11,12 +11,14 @@ import Person from "@material-ui/icons/Person";
 import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 
+import Logo from "../../logo.png";
+
 function Header() {
   const classes = useStyles();
   const iconStyle = { fontSize: 40 };
   return (
     <section className={classes.container}>
-      <div className={classes.logo}>Marca</div>
+      <img className={classes.logo} src={Logo} height="100" alt="Loop logo" />
       <div className={classes.icons}>
         <Link to="/">
           <span className={classes.icon}>
@@ -65,11 +67,8 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     justifyContent: "space-between",
-    marginBottom: 30,
   },
-  logo: {
-    fontSize: 30,
-  },
+  logo: {},
   icons: {
     display: "flex",
     fontSize: 30,
@@ -83,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
     marginRight: theme.spacing(2),
     marginLeft: 0,
-    width: "100%",
+    height: 45,
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(3),
       width: "auto",

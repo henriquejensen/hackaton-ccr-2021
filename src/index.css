@@ -10,4 +10,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffc8a1;
+  padding: 30px;
 }
