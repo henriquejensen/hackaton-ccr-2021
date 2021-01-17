@@ -11,20 +11,20 @@ export type ProductType = {
   name: string;
   price: number;
   image: string;
-  details?: string;
-  number?: number;
-  seller?: string;
-  phone?: string;
+  details: string;
+  number: number;
+  seller: string;
+  phone: string;
 };
 
 type InitialStateType = {
   products: ProductType[];
-  shoppingCart: number;
+  shoppingCart: ProductType[];
 };
 
 const initialState = {
   products: [],
-  shoppingCart: 0,
+  shoppingCart: [],
 };
 
 const AppContext = createContext<{

@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 function Cart() {
   const classes = useStyles();
   const { state } = React.useContext(AppContext);
-  const { products } = state;
+  const { shoppingCart: products } = state;
 
   return (
     <section>

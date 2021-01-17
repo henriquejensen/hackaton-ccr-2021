@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 function Congratulations() {
   const classes = useStyles();
   const { state } = useContext(AppContext);
-  const { products } = state;
+  const { shoppingCart: products } = state;
 
   return (
     <section>

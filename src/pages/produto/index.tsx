@@ -4,9 +4,10 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
+import { Link, Redirect, useParams } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
+import { AppContext } from "../../store";
 import Button from "../../components/button";
 import Image from "../../components/image";
 
@@ -33,6 +34,14 @@ const useStyles = makeStyles({
 
 export default function ProdutoDetail() {
   const classes = useStyles();
+  let { id } = useParams<{ id: string }>();
+  const { state } = React.useContext(AppContext);
+  const { products } = state;
+  const product = products.find((product) => String(product.id) === id);
+
+  if (!product) {
+    <Redirect to="/" />;
+  }
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -44,11 +53,11 @@ export default function ProdutoDetail() {
           <Grid item xs={3}>
             <Typography className={classes.pos}>Detalhes</Typography>
             <Typography className={classes.pos} color="textSecondary">
-              detalhes do produto
+              {product?.details}
             </Typography>
           </Grid>
           <Grid item xs={6} className={classes.image}>
-            <Image image={""} />
+            <Image image={product?.image || ""} />
           </Grid>
           <Grid item xs={3}>
             <Typography className={classes.pos}>Contatar Vendedor</Typography>
@@ -61,7 +70,7 @@ export default function ProdutoDetail() {
           </Grid>
         </Grid>
         <Typography variant="body2" component="p">
-          R$ 22.50
+          R$ {product?.price}
         </Typography>
       </CardContent>
     </Card>
