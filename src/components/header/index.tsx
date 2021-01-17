@@ -13,23 +13,31 @@ import InputBase from "@material-ui/core/InputBase";
 
 function Header() {
   const classes = useStyles();
+  const iconStyle = { fontSize: 40 };
   return (
     <section className={classes.container}>
-      <div>MARCA</div>
+      <div className={classes.logo}>Marca</div>
       <div className={classes.icons}>
         <Link to="/">
-          <Home />
+          <span className={classes.icon}>
+            <Home style={iconStyle} />
+          </span>
         </Link>
-        <Favorite />
+        <span className={classes.icon}>
+          <Favorite style={iconStyle} />
+        </span>
         <Link to="/cart">
-          <ShoppingCart />
+          <span className={classes.icon}>
+            <ShoppingCart style={iconStyle} />
+          </span>
         </Link>
+
         <div className={classes.search}>
           <div className={classes.searchIcon}>
             <SearchIcon />
           </div>
           <InputBase
-            placeholder="Search…"
+            placeholder="Nome do produto…"
             classes={{
               root: classes.inputRoot,
               input: classes.inputInput,
@@ -37,10 +45,16 @@ function Header() {
             inputProps={{ "aria-label": "search" }}
           />
         </div>
-        <Settings />
-        <Chat />
+        <span className={classes.icon}>
+          <Settings style={iconStyle} />
+        </span>
+        <span className={classes.icon}>
+          <Chat style={iconStyle} />
+        </span>
         <Link to="/login">
-          <Person />
+          <span className={classes.icon}>
+            <Person style={iconStyle} />
+          </span>
         </Link>
       </div>
     </section>
@@ -51,18 +65,22 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     justifyContent: "space-between",
+    marginBottom: 30,
   },
-  logo: {},
+  logo: {
+    fontSize: 30,
+  },
   icons: {
     display: "flex",
+    fontSize: 30,
+  },
+  icon: {
+    color: "black",
   },
   search: {
     position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
+    borderRadius: 30,
+    backgroundColor: "white",
     marginRight: theme.spacing(2),
     marginLeft: 0,
     width: "100%",
