@@ -1,8 +1,9 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import CardMedia from "@material-ui/core/CardMedia";
 import { Link } from "react-router-dom";
+
+import Button from "../../components/button";
 
 function Cart() {
   return (
@@ -28,9 +29,7 @@ function Cart() {
         Subtotal
       </Typography>
       <Link to="/congratulations">
-        <Button size="small" color="primary">
-          Efetuar compra
-        </Button>
+        <Button title="Efetuar compra" />
       </Link>
     </section>
   );

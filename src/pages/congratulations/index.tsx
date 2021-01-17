@@ -1,8 +1,9 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import CardMedia from "@material-ui/core/CardMedia";
 import { Link } from "react-router-dom";
+
+import Button from "../../components/button";
 
 function Congratulations() {
   return (
@@ -23,9 +24,7 @@ function Congratulations() {
         será doada!
       </Typography>
       <Link to="/">
-        <Button size="small" color="primary">
-          Continuar comprando
-        </Button>
+        <Button title="Continuar comprando" />
       </Link>
     </section>
   );
