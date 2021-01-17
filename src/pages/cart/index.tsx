@@ -7,6 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import { AppContext } from "../../store";
 import Button from "../../components/button";
 import Image from "../../components/image";
+import { Types } from "../../store/reducers";
 
 const useStyles = makeStyles((theme) => ({
   wrapperBtn: {
@@ -25,9 +26,11 @@ const useStyles = makeStyles((theme) => ({
 
 function Cart() {
   const classes = useStyles();
-  const { state } = React.useContext(AppContext);
+  const { state, dispatch } = React.useContext(AppContext);
   const { shoppingCart: products } = state;
   const image = products[0]?.image;
+
+  const deleteProduct = () => dispatch({ type: Types.Delete });
 
   return (
     <section>
@@ -61,9 +64,16 @@ function Cart() {
           </Grid>
         </Grid>
         <div className={classes.wrapperBtn}>
-          <Link to="/">
-            <span className={classes.btn}>Remover</span>
-          </Link>
+          {products.length ? (
+            <span onClick={deleteProduct} className={classes.btn}>
+              Remover
+            </span>
+          ) : (
+            <Link to="/">
+              <span className={classes.btn}>Voltar</span>
+            </Link>
+          )}
+
           <Link to="/congratulations">
             <Button title="Efetuar compra" onClick={console.log} />
           </Link>

@@ -64,8 +64,6 @@ export const productReducer = (
       return [product];
     case Types.Create:
       return state;
-    case Types.Delete:
-      return [...state.filter((product) => product.id !== action.payload.id)];
     default:
       return state;
   }
@@ -73,6 +71,7 @@ export const productReducer = (
 
 type ShoppingCartPayload = {
   [Types.Add]: ProductType;
+  [Types.Delete]: undefined;
 };
 
 export type ShoppingCartActions = ActionMap<ShoppingCartPayload>[keyof ActionMap<ShoppingCartPayload>];
@@ -84,6 +83,8 @@ export const shoppingCartReducer = (
   switch (action.type) {
     case Types.Add:
       return [...state, action.payload];
+    case Types.Delete:
+      return [];
     default:
       return state;
   }

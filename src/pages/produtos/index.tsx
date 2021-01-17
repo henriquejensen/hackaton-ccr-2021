@@ -20,7 +20,7 @@ function Produtos() {
       dispatch({
         type: Types.Read,
       });
-    }, 2000);
+    }, 500);
   }, [products, dispatch]);
 
   if (isLoading) {
