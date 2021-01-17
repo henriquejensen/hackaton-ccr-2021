@@ -4,15 +4,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Produtos from "../pages/produtos";
 import Produto from "../pages/produto";
 import Header from "../components/header";
-import Purchase from "../pages/purchase-message";
+import Congratulations from "../pages/congratulations";
 
 export default function App() {
   return (
     <Router>
       <Header />
       <Switch>
-        <Route path="/purchase">
-          <Purchase />
+        <Route path="/congratulations">
+          <Congratulations />
         </Route>
         <Route path="/produto">
           <Produto />

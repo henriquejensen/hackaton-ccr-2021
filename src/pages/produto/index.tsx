@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function OutlinedCard() {
+export default function Congratulations() {
   const classes = useStyles();
 
   return (
