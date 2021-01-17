@@ -1,36 +1,70 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import CardMedia from "@material-ui/core/CardMedia";
 import { Link } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 
 import Button from "../../components/button";
+import Image from "../../components/image";
+
+const useStyles = makeStyles((theme) => ({
+  wrapperBtn: {
+    display: "flex",
+    justifyContent: "space-between",
+    paddingTop: 20,
+  },
+  btn: {
+    color: "black",
+    textDecoration: "none",
+  },
+  container: {
+    paddingTop: 20,
+  },
+}));
 
 function Cart() {
+  const classes = useStyles();
+
   return (
     <section>
-      <Typography variant="h3" component="h2">
+      <Typography variant="h4" component="h1">
         Carrinho
       </Typography>
-      <CardMedia
-        component="img"
-        alt="Produto"
-        height="100"
-        width="100"
-        image="https://i.ytimg.com/vi/eSXu5BZSBHo/maxresdefault.jpg"
-        title="Produto"
-      />
-      <Typography variant="h3" component="h2">
-        Nome
-      </Typography>
-      <Typography variant="h5" component="h2">
-        Quantidade
-      </Typography>
-      <Typography variant="h5" component="h2">
-        Subtotal
-      </Typography>
-      <Link to="/congratulations">
-        <Button title="Efetuar compra" />
-      </Link>
+      <div className={classes.container}>
+        <Grid container spacing={3}>
+          <Grid item xs={4}>
+            <Image />
+          </Grid>
+          <Grid item xs={2}>
+            <Typography variant="h6" component="h2">
+              Nome
+            </Typography>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography variant="h6" component="h2">
+              Frete
+            </Typography>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography variant="h6" component="h2">
+              Quantidade
+            </Typography>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography variant="h6" component="h2">
+              Subtotal
+            </Typography>
+          </Grid>
+        </Grid>
+        <div className={classes.wrapperBtn}>
+          <Link to="/">
+            <span className={classes.btn}>Remover</span>
+          </Link>
+          <Link to="/congratulations">
+            <Button title="Efetuar compra" />
+          </Link>
+        </div>
+      </div>
     </section>
   );
 }
