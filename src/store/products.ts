@@ -49,7 +49,97 @@ const products = [
     image:
       "https://www.artesanatoereciclagem.com.br/wp-content/uploads/2014/08/Vasos-de-flores-artesanais-e-criativos-009.jpg",
     number: 50,
-    price: 25.0,
+    price: 25.3,
+    seller: "Flores do dia",
+    phone: "11324234234",
+  },
+  {
+    id: 4,
+    name: "Capa para botijão de gás em crochê",
+    details: `Capa para botijão de gás feita em crochê`,
+    image:
+      "https://img.elo7.com.br/product/main/1C838E9/capa-para-botijao-de-gas-artesanato.jpg",
+    number: 50,
+    price: 55.2,
+    seller: "Flores do dia",
+    phone: "11324234234",
+  },
+  {
+    id: 5,
+    name: "Rosas de EVA Artesanal",
+    details: `Linda rosa feita em EVA ideal para presentear ou fazer lindos arranjos`,
+    image:
+      "https://img.elo7.com.br/product/main/12DD66F/rosas-de-eva-artesanal-lembrancinha.jpg",
+    number: 50,
+    price: 34.7,
+    seller: "Flores do dia",
+    phone: "11324234234",
+  },
+  {
+    id: 6,
+    name: "Sabonete de Argila Preta e Karité",
+    details: `Kit com 4 mini sabonetes de argila preta, extrato de leite de cabra e manteiga de karité. Acompanha saboneteira de pinus.`,
+    image:
+      "https://img.elo7.com.br/product/main/29176D0/sabonete-de-argila-preta-e-karite-presente-de-natal.jpg",
+    number: 50,
+    price: 12.21,
+    seller: "Flores do dia",
+    phone: "11324234234",
+  },
+  {
+    id: 7,
+    name: "Vela Decorativa Floral - 10 velas",
+    details: `Vela floral alta.`,
+    image:
+      "https://img.elo7.com.br/product/main/1A0C94E/vela-decorativa-floral-10-velas.jpg",
+    number: 50,
+    price: 12.21,
+    seller: "Flores do dia",
+    phone: "11324234234",
+  },
+  {
+    id: 8,
+    name: "Lixinho para carro",
+    details: `Lixinho para carro confeccionado em tecido 100% algodão, com matelasse, cores e modelos variados`,
+    image:
+      "https://img.elo7.com.br/product/main/7FFD86/lixinho-para-carro-presentes.jpg",
+    number: 50,
+    price: 2.21,
+    seller: "Flores do dia",
+    phone: "11324234234",
+  },
+  {
+    id: 9,
+    name: "Cestaria de Jornal Passarinho",
+    details: `Cestaria de jornal caneca e passarinho, feita com canudos de jornal, com passarinho de tecido e com decoupagem. Acabamento em verniz impermeabilizante.
+    A limpeza pode ser feita com um pano úmido.`,
+    image:
+      "https://img.elo7.com.br/product/zoom/34E3FD4/cestaria-de-jornal-passarinho-canudinhos-de-jornal.jpg",
+    number: 50,
+    price: 9.21,
+    seller: "Flores do dia",
+    phone: "11324234234",
+  },
+  {
+    id: 10,
+    name: "Conjunto cestos organizadores - 3 peças",
+    details: `Cestos organizadores com 3 peças, feito em crochê com fio de malha. Ótimo para decorar e organizar sua bancada de maquiagem, estudos ou o banheiro.`,
+    image:
+      "https://img.elo7.com.br/product/main/2EE1A5C/conjunto-cestos-organizadores-3-pecas-cesto-de-fio-de-malha.jpg",
+    number: 50,
+    price: 92.21,
+    seller: "Flores do dia",
+    phone: "11324234234",
+  },
+  {
+    id: 11,
+    name: "Conjunto organizador de banheiro",
+    details: `Kit de Cestos organizadores de Banheiro.
+    Feito em crochê com fio de malha.`,
+    image:
+      "https://img.elo7.com.br/product/zoom/2EDEAFB/conjunto-organizador-de-banheiro-cesto-de-croche.jpg",
+    number: 50,
+    price: 42.21,
     seller: "Flores do dia",
     phone: "11324234234",
   },

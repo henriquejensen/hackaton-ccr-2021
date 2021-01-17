@@ -10,6 +10,7 @@ import { ProductType } from "../../store";
 const useStyles = makeStyles({
   root: {
     maxWidth: 250,
+    height: 350,
     margin: 10,
     padding: 10,
     borderRadius: 30,
