@@ -64,7 +64,9 @@ export default function ProdutoDetail() {
             <Image image={product.image} />
           </Grid>
           <Grid item xs={3}>
-            <Typography className={classes.pos}>Contatar Vendedor</Typography>
+            <Typography className={classes.pos}>
+              <a href={`tel:${product.phone}`}>Contatar Vendedor</a>
+            </Typography>
 
             <CardActions>
               <Link to="/cart">
@@ -73,7 +75,7 @@ export default function ProdutoDetail() {
             </CardActions>
           </Grid>
         </Grid>
-        <Typography variant="body2" component="p">
+        <Typography variant="h4" component="h4">
           R$ {product.price}
         </Typography>
       </CardContent>
