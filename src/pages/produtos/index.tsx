@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 
 import Card from "../../components/card";
+import { AppContext } from "../../store";
 
 function Produtos() {
-  const produtos = [1, 2, 3, 4, 5];
   const classes = useStyles();
+  const { state } = useContext(AppContext);
 
   return (
     <section className={classes.container}>
-      {produtos.map((produto) => (
+      {state.products.map((product) => (
         <Link to="/produto">
-          <Card key={produto} />
+          <Card key={product.id} />
         </Link>
       ))}
     </section>
