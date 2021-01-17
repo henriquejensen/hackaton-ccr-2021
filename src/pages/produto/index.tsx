@@ -3,12 +3,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
 import Button from "../../components/button";
+import Image from "../../components/image";
 
 const useStyles = makeStyles({
   root: {
@@ -26,13 +26,12 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
   image: {
-    width: "70%",
-    borderRadius: 30,
-    margin: "0 auto",
+    display: "flex",
+    justifyContent: "center",
   },
 });
 
-export default function Congratulations() {
+export default function ProdutoDetail() {
   const classes = useStyles();
 
   return (
@@ -48,14 +47,8 @@ export default function Congratulations() {
               detalhes do produto
             </Typography>
           </Grid>
-          <Grid item xs={6}>
-            <CardMedia
-              className={classes.image}
-              component="img"
-              alt="Produto"
-              image="https://i.ytimg.com/vi/eSXu5BZSBHo/maxresdefault.jpg"
-              title="Produto"
-            />
+          <Grid item xs={6} className={classes.image}>
+            <Image />
           </Grid>
           <Grid item xs={3}>
             <Typography className={classes.pos}>Contatar Vendedor</Typography>

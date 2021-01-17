@@ -1,10 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
+import CardMaterial from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
+
+import Image from "../../components/image";
 
 const useStyles = makeStyles({
   root: {
@@ -21,31 +21,28 @@ const useStyles = makeStyles({
     borderRadius: 30,
     margin: "0 auto",
   },
+  cardArea: {
+    display: "flex",
+    justifyContent: "center",
+  },
 });
 
-export default function ImgMediaCard() {
+export default function Card() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.image}
-          component="img"
-          alt="Produto"
-          height="140"
-          image="https://i.ytimg.com/vi/eSXu5BZSBHo/maxresdefault.jpg"
-          title="Produto"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Nome do produto
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            R$22.50
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <CardMaterial className={classes.root}>
+      <div className={classes.cardArea}>
+        <Image />
+      </div>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          Nome do produto
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          R$22.50
+        </Typography>
+      </CardContent>
+    </CardMaterial>
   );
 }
