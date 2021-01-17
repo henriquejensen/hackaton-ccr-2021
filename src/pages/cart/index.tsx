@@ -27,6 +27,7 @@ function Cart() {
   const classes = useStyles();
   const { state } = React.useContext(AppContext);
   const { shoppingCart: products } = state;
+  const image = products[0]?.image;
 
   return (
     <section>
@@ -36,7 +37,7 @@ function Cart() {
       <div className={classes.container}>
         <Grid container spacing={3}>
           <Grid item xs={4}>
-            <Image image={products[0]?.image || ""} />
+            {image && <Image image={image} />}
           </Grid>
           <Grid item xs={2}>
             <Typography variant="h6" component="h2">
@@ -64,7 +65,7 @@ function Cart() {
             <span className={classes.btn}>Remover</span>
           </Link>
           <Link to="/congratulations">
-            <Button title="Efetuar compra" />
+            <Button title="Efetuar compra" onClick={console.log} />
           </Link>
         </div>
       </div>

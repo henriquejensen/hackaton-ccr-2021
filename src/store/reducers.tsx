@@ -72,7 +72,7 @@ export const productReducer = (
 };
 
 type ShoppingCartPayload = {
-  [Types.Add]: undefined;
+  [Types.Add]: ProductType;
 };
 
 export type ShoppingCartActions = ActionMap<ShoppingCartPayload>[keyof ActionMap<ShoppingCartPayload>];
@@ -83,7 +83,7 @@ export const shoppingCartReducer = (
 ): ProductType[] => {
   switch (action.type) {
     case Types.Add:
-      return state;
+      return [...state, action.payload];
     default:
       return state;
   }

@@ -10,6 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import { AppContext } from "../../store";
 import Button from "../../components/button";
 import Image from "../../components/image";
+import { Types } from "../../store/reducers";
 
 const useStyles = makeStyles({
   root: {
@@ -35,13 +36,15 @@ const useStyles = makeStyles({
 export default function ProdutoDetail() {
   const classes = useStyles();
   let { id } = useParams<{ id: string }>();
-  const { state } = React.useContext(AppContext);
+  const { state, dispatch } = React.useContext(AppContext);
   const { products } = state;
   const product = products.find((product) => String(product.id) === id);
 
   if (!product) {
-    <Redirect to="/" />;
+    return <Redirect to="/" />;
   }
+
+  const addToCart = () => dispatch({ type: Types.Add, payload: product });
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -53,24 +56,24 @@ export default function ProdutoDetail() {
           <Grid item xs={3}>
             <Typography className={classes.pos}>Detalhes</Typography>
             <Typography className={classes.pos} color="textSecondary">
-              {product?.details}
+              {product.details}
             </Typography>
           </Grid>
           <Grid item xs={6} className={classes.image}>
-            <Image image={product?.image || ""} />
+            <Image image={product.image} />
           </Grid>
           <Grid item xs={3}>
             <Typography className={classes.pos}>Contatar Vendedor</Typography>
 
             <CardActions>
               <Link to="/cart">
-                <Button title="Adicionar ao carrinho" />
+                <Button title="Adicionar ao carrinho" onClick={addToCart} />
               </Link>
             </CardActions>
           </Grid>
         </Grid>
         <Typography variant="body2" component="p">
-          R$ {product?.price}
+          R$ {product.price}
         </Typography>
       </CardContent>
     </Card>

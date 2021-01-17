@@ -42,7 +42,7 @@ function Congratulations() {
         </Grid>
       </Grid>
       <Link to="/">
-        <Button title="Continuar comprando" />
+        <Button title="Continuar comprando" onClick={console.log} />
       </Link>
     </section>
   );
