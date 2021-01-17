@@ -20,6 +20,7 @@ const product = {
     Tamanho Infantil 22cm x 12cm.
     Tamanho Adulto 26cm x 14cm.
     `,
+  image: "https://i.ytimg.com/vi/eSXu5BZSBHo/maxresdefault.jpg",
   number: 10,
   price: 30.5,
   seller: "Loja da Bia",
@@ -57,7 +58,7 @@ export type ProductActions = ActionMap<ProductPayload>[keyof ActionMap<ProductPa
 export const productReducer = (
   state: ProductType[],
   action: ProductActions | ShoppingCartActions
-) => {
+): ProductType[] => {
   switch (action.type) {
     case Types.Read:
       return [product];
@@ -68,6 +69,7 @@ export const productReducer = (
           id: action.payload.id,
           name: action.payload.name,
           price: action.payload.price,
+          image: action.payload.image,
         },
       ];
     case Types.Delete:
@@ -86,10 +88,10 @@ export type ShoppingCartActions = ActionMap<ShoppingCartPayload>[keyof ActionMap
 export const shoppingCartReducer = (
   state: number,
   action: ProductActions | ShoppingCartActions
-) => {
+): number => {
   switch (action.type) {
     case Types.Add:
-      return state + 1;
+      return state;
     default:
       return state;
   }

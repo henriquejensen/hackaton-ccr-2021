@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
+import { AppContext } from "../../store";
 import Button from "../../components/button";
 import Image from "../../components/image";
 
@@ -19,12 +20,14 @@ const useStyles = makeStyles({
 
 function Congratulations() {
   const classes = useStyles();
+  const { state } = useContext(AppContext);
+  const { products } = state;
 
   return (
     <section>
       <Grid container spacing={3} className={classes.grid}>
         <Grid item xs={4}>
-          <Image />
+          <Image image={products[0]?.image || ""} />
         </Grid>
         <Grid item xs={8}>
           <div>

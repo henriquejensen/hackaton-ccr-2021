@@ -28,13 +28,13 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Card({ name, price }: ProductType) {
+export default function Card({ name, price, image = "" }: ProductType) {
   const classes = useStyles();
 
   return (
     <CardMaterial className={classes.root}>
       <div className={classes.cardArea}>
-        <Image />
+        <Image image={image} />
       </div>
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">

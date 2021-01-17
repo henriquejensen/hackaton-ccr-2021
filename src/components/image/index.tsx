@@ -9,7 +9,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Image() {
+export default function Image({ image }: { image: string }) {
   const classes = useStyles();
 
   return (
@@ -18,7 +18,7 @@ export default function Image() {
       component="img"
       alt="Produto"
       height="140"
-      image="https://i.ytimg.com/vi/eSXu5BZSBHo/maxresdefault.jpg"
+      image={image}
       title="Produto"
     />
   );

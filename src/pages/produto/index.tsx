@@ -48,7 +48,7 @@ export default function ProdutoDetail() {
             </Typography>
           </Grid>
           <Grid item xs={6} className={classes.image}>
-            <Image />
+            <Image image={""} />
           </Grid>
           <Grid item xs={3}>
             <Typography className={classes.pos}>Contatar Vendedor</Typography>

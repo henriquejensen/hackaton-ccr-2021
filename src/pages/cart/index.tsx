@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
+import { AppContext } from "../../store";
 import Button from "../../components/button";
 import Image from "../../components/image";
 
@@ -24,6 +25,8 @@ const useStyles = makeStyles((theme) => ({
 
 function Cart() {
   const classes = useStyles();
+  const { state } = React.useContext(AppContext);
+  const { products } = state;
 
   return (
     <section>
@@ -33,7 +36,7 @@ function Cart() {
       <div className={classes.container}>
         <Grid container spacing={3}>
           <Grid item xs={4}>
-            <Image />
+            <Image image={products[0]?.image || ""} />
           </Grid>
           <Grid item xs={2}>
             <Typography variant="h6" component="h2">
