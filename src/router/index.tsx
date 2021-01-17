@@ -5,6 +5,7 @@ import Produtos from "../pages/produtos";
 import Produto from "../pages/produto";
 import Header from "../components/header";
 import Congratulations from "../pages/congratulations";
+import Cart from "../pages/cart";
 
 export default function App() {
   return (
@@ -13,6 +14,9 @@ export default function App() {
       <Switch>
         <Route path="/congratulations">
           <Congratulations />
+        </Route>
+        <Route path="/cart">
+          <Cart />
         </Route>
         <Route path="/produto">
           <Produto />

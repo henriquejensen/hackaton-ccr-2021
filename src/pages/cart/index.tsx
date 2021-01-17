@@ -4,9 +4,12 @@ import Button from "@material-ui/core/Button";
 import CardMedia from "@material-ui/core/CardMedia";
 import { Link } from "react-router-dom";
 
-function Congratulations() {
+function Cart() {
   return (
     <section>
+      <Typography variant="h3" component="h2">
+        Carrinho
+      </Typography>
       <CardMedia
         component="img"
         alt="Produto"
@@ -16,19 +19,21 @@ function Congratulations() {
         title="Produto"
       />
       <Typography variant="h3" component="h2">
-        Compra Efetuada!
+        Nome
       </Typography>
       <Typography variant="h5" component="h2">
-        Obrigado por contribuir com essa comunidade, uma porcentagem dessa venda
-        será doada!
+        Quantidade
       </Typography>
-      <Link to="/">
+      <Typography variant="h5" component="h2">
+        Subtotal
+      </Typography>
+      <Link to="/congratulations">
         <Button size="small" color="primary">
-          Continuar comprando
+          Efetuar compra
         </Button>
       </Link>
     </section>
   );
 }
 
-export default Congratulations;
+export default Cart;

@@ -6,6 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -48,9 +49,11 @@ export default function Congratulations() {
           R$ 22.50
         </Typography>
         <CardActions>
-          <Button size="small" color="primary">
-            Acionar ao carrinho
-          </Button>
+          <Link to="/cart">
+            <Button size="small" color="primary">
+              Acionar ao carrinho
+            </Button>
+          </Link>
         </CardActions>
       </CardContent>
     </Card>
