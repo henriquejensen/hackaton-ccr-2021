@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
 import { AppContext } from "../../store";
 import Button from "../../components/button";
 import Image from "../../components/image";
+import Link from "../../components/link";
 
 const useStyles = makeStyles({
   grid: {

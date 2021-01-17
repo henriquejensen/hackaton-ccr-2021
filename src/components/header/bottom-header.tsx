@@ -5,7 +5,8 @@ import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import Home from "@material-ui/icons/Home";
 import ShoppingCart from "@material-ui/icons/ShoppingCart";
 import Settings from "@material-ui/icons/Settings";
-import { Link } from "react-router-dom";
+
+import Link from "../link";
 
 const useStyles = makeStyles({
   root: {

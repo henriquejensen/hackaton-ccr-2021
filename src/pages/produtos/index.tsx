@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 
 import Card from "../../components/card";
 import { AppContext } from "../../store";
 import { Types } from "../../store/reducers";
 import { setTimeout } from "timers";
+import Link from "../../components/link";
 
 function Produtos() {
   const classes = useStyles();

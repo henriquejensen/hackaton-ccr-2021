@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 
 import Home from "@material-ui/icons/Home";
 import Favorite from "@material-ui/icons/Favorite";
@@ -12,6 +11,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 
 import Logo from "../../logo.png";
+import Link from "../link";
 
 function Header() {
   const classes = useStyles();

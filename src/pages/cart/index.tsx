@@ -1,6 +1,5 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
@@ -10,6 +9,7 @@ import { AppContext } from "../../store";
 import Button from "../../components/button";
 import Image from "../../components/image";
 import { Types } from "../../store/reducers";
+import Link from "../../components/link";
 
 const useStyles = makeStyles((theme) => ({
   wrapperBtn: {

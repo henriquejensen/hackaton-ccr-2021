@@ -4,13 +4,14 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import { Link, Redirect, useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
 import { AppContext } from "../../store";
 import Button from "../../components/button";
 import Image from "../../components/image";
 import { Types } from "../../store/reducers";
+import Link from "../../components/link";
 
 const useStyles = makeStyles({
   root: {
