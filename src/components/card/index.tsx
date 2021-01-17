@@ -2,16 +2,24 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 250,
     margin: 10,
+    padding: 10,
+    borderRadius: 30,
+    backgroundImage: "linear-gradient(#d7f1ed, #d7f1ed, #f5a5a5)",
+    boxShadow: "0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)",
+    textAlign: "center",
+  },
+  image: {
+    width: "70%",
+    borderRadius: 30,
+    margin: "0 auto",
   },
 });
 
@@ -22,6 +30,7 @@ export default function ImgMediaCard() {
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
+          className={classes.image}
           component="img"
           alt="Produto"
           height="140"
@@ -37,14 +46,6 @@ export default function ImgMediaCard() {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Ver
-        </Button>
-        <Button size="small" color="primary">
-          Comprar
-        </Button>
-      </CardActions>
     </Card>
   );
 }
