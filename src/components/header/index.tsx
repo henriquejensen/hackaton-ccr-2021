@@ -21,7 +21,9 @@ function Header() {
           <Home />
         </Link>
         <Favorite />
-        <ShoppingCart />
+        <Link to="/cart">
+          <ShoppingCart />
+        </Link>
         <div className={classes.search}>
           <div className={classes.searchIcon}>
             <SearchIcon />
@@ -37,7 +39,9 @@ function Header() {
         </div>
         <Settings />
         <Chat />
-        <Person />
+        <Link to="/login">
+          <Person />
+        </Link>
       </div>
     </section>
   );
