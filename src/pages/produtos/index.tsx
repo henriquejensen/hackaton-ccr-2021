@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 import Card from "../../components/card";
 
@@ -10,7 +11,9 @@ function Produtos() {
   return (
     <section className={classes.container}>
       {produtos.map((produto) => (
-        <Card key={produto} />
+        <Link to="/produto">
+          <Card key={produto} />
+        </Link>
       ))}
     </section>
   );

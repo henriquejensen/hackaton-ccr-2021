@@ -23,14 +23,14 @@ export default function ImgMediaCard() {
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="Contemplative Reptile"
+          alt="Produto"
           height="140"
           image="https://i.ytimg.com/vi/eSXu5BZSBHo/maxresdefault.jpg"
-          title="Contemplative Reptile"
+          title="Produto"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Trico
+            Nome do produto
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             R$22.50
