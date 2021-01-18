@@ -55,21 +55,21 @@ function Cart() {
       </Typography>
       <div className={classes.container}>
         <Grid container spacing={3}>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             {image && <Image image={image} />}
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} md={2}>
             <Typography variant="h6" component="h2">
               Nome
             </Typography>
             <span>{product?.name}</span>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} md={2}>
             <Typography variant="h6" component="h2">
               Frete
             </Typography>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} md={2}>
             <Typography variant="h6" component="h2">
               Quantidade
             </Typography>
@@ -83,7 +83,7 @@ function Cart() {
               </span>
             </div>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} md={2}>
             <Typography variant="h6" component="h2">
               Subtotal
             </Typography>

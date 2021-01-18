@@ -54,16 +54,16 @@ export default function ProdutoDetail() {
           Informações do Produto
         </Typography>
         <Grid container spacing={3}>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={3}>
             <Typography className={classes.pos}>Detalhes</Typography>
             <Typography className={classes.pos} color="textSecondary">
               {product.details}
             </Typography>
           </Grid>
-          <Grid item xs={6} className={classes.image}>
+          <Grid item xs={12} md={6} className={classes.image}>
             <Image image={product.image} />
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={3}>
             <Typography className={classes.pos}>
               <a href={`tel:${product.phone}`}>Contatar Vendedor</a>
             </Typography>

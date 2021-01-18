@@ -26,10 +26,10 @@ function Congratulations() {
   return (
     <section>
       <Grid container spacing={3} className={classes.grid}>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <Image image={products[0]?.image || ""} />
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={12} md={8}>
           <div>
             <Typography variant="h5" component="h1">
               Compra Efetuada!
