@@ -49,7 +49,7 @@ const products = [
     image:
       "https://www.artesanatoereciclagem.com.br/wp-content/uploads/2014/08/Vasos-de-flores-artesanais-e-criativos-009.jpg",
     number: 50,
-    price: 25.3,
+    price: 25.37,
     seller: "Flores do dia",
     phone: "11324234234",
   },
@@ -60,7 +60,7 @@ const products = [
     image:
       "https://img.elo7.com.br/product/main/1C838E9/capa-para-botijao-de-gas-artesanato.jpg",
     number: 50,
-    price: 55.2,
+    price: 55.22,
     seller: "Flores do dia",
     phone: "11324234234",
   },
@@ -71,7 +71,7 @@ const products = [
     image:
       "https://img.elo7.com.br/product/main/12DD66F/rosas-de-eva-artesanal-lembrancinha.jpg",
     number: 50,
-    price: 34.7,
+    price: 34.75,
     seller: "Flores do dia",
     phone: "11324234234",
   },

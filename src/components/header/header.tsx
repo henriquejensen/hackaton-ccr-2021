@@ -19,7 +19,7 @@ function Header() {
   return (
     <section className={classes.container}>
       <Link to="/">
-        <img className={classes.logo} src={Logo} height="140" alt="Loop logo" />
+        <img className={classes.logo} src={Logo} height="300" alt="Loop logo" />
       </Link>
 
       <div className={classes.icons}>
@@ -70,11 +70,17 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     justifyContent: "space-between",
+    position: "relative",
   },
-  logo: {},
+  logo: {
+    position: "absolute",
+    top: -70,
+    left: -70,
+  },
   icons: {
     display: "flex",
     fontSize: 30,
+    padding: 30,
     alignItems: "center",
   },
   icon: {

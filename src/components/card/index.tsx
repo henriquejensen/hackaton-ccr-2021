@@ -27,6 +27,12 @@ const useStyles = makeStyles({
     display: "flex",
     justifyContent: "center",
   },
+  container: {
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: "column",
+    height: 200,
+  },
 });
 
 export default function Card({ name, price, image = "" }: ProductType) {
@@ -37,11 +43,11 @@ export default function Card({ name, price, image = "" }: ProductType) {
       <div className={classes.cardArea}>
         <Image image={image} />
       </div>
-      <CardContent>
+      <CardContent className={classes.container}>
         <Typography gutterBottom variant="h5" component="h2">
           {name}
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="h6" color="textSecondary" component="h6">
           R${price}
         </Typography>
       </CardContent>
