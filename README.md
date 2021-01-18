@@ -5,3 +5,5 @@ Um evento 100% online que vai reunir profissionais, empreendedores e entusiastas
 # Descriçåo
 
 Este repositório é reservado para o código do desafio do Hackaton CCR. Nosso projeto é o desenvolvimento de uma plataforma para a comunidade de artesanato brasileiro vender e divulgar seus produtos.
+
+link do site: https://comunidade-loop.netlify.app/
