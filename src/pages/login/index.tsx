@@ -1,17 +1,16 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Button from "../../components/button";
 import { AppContext } from "../../store";
 import { Types } from "../../store/reducers";
+import Logo from "../../logo.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  logo: {
+    margin: -100,
+  },
 }));
 
 export default function SignInSide() {
@@ -57,12 +59,12 @@ export default function SignInSide() {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Loop
-          </Typography>
+          <img
+            className={classes.logo}
+            src={Logo}
+            height="300"
+            alt="Loop logo"
+          />
           <form className={classes.form} noValidate>
             <TextField
               variant="outlined"
