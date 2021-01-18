@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import { useHistory } from "react-router-dom";
 
 import { AppContext } from "../../store";
 import Button from "../../components/button";
@@ -37,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Cart() {
   const classes = useStyles();
+  const history = useHistory();
   const [numberOfProducts, setNumberOfProducts] = React.useState(1);
   const { state, dispatch } = React.useContext(AppContext);
   const { shoppingCart: products } = state;
@@ -47,6 +49,10 @@ function Cart() {
   const decreaseNumber = () =>
     numberOfProducts - 1 && setNumberOfProducts(numberOfProducts - 1);
   const increaseNumber = () => setNumberOfProducts(numberOfProducts + 1);
+  const handleClick = () =>
+    setTimeout(() => {
+      history.push("/congratulations");
+    }, 500);
 
   return (
     <section>
@@ -101,9 +107,9 @@ function Cart() {
             </Link>
           )}
 
-          <Link to="/congratulations">
-            <Button title="Efetuar compra" onClick={console.log} />
-          </Link>
+          <div>
+            <Button title="Efetuar compra" onClick={handleClick} />
+          </div>
         </div>
       </div>
     </section>
