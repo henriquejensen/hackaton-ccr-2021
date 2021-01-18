@@ -7,8 +7,21 @@ import Header from "../components/header";
 import Congratulations from "../pages/congratulations";
 import Cart from "../pages/cart";
 import Login from "../pages/login";
+import { AppContext } from "../store";
 
 export default function App() {
+  const { state } = React.useContext(AppContext);
+  const { user } = state;
+  if (!user.email || !user.password) {
+    return (
+      <Router>
+        <Route path="/">
+          <Login />
+        </Route>
+      </Router>
+    );
+  }
+
   return (
     <Router>
       <Header />
@@ -21,9 +34,6 @@ export default function App() {
         </Route>
         <Route path="/:id">
           <Produto />
-        </Route>
-        <Route path="/login">
-          <Login />
         </Route>
         <Route path="/">
           <Produtos />

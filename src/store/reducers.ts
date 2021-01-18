@@ -1,4 +1,4 @@
-import { ProductType } from "./index";
+import { ProductType, UserType } from "./index";
 import data from "./products";
 
 type ActionMap<M extends { [index: string]: any }> = {
@@ -17,6 +17,7 @@ export enum Types {
   Create = "CREATE_PRODUCT",
   Delete = "DELETE_PRODUCT",
   Add = "ADD_PRODUCT",
+  Login = "LOGIN",
 }
 
 // Product
@@ -31,7 +32,7 @@ export type ProductActions = ActionMap<ProductPayload>[keyof ActionMap<ProductPa
 
 export const productReducer = (
   state: ProductType[],
-  action: ProductActions | ShoppingCartActions
+  action: ProductActions | ShoppingCartActions | UserActions
 ): ProductType[] => {
   switch (action.type) {
     case Types.Read:
@@ -52,13 +53,31 @@ export type ShoppingCartActions = ActionMap<ShoppingCartPayload>[keyof ActionMap
 
 export const shoppingCartReducer = (
   state: ProductType[],
-  action: ProductActions | ShoppingCartActions
+  action: ProductActions | ShoppingCartActions | UserActions
 ): ProductType[] => {
   switch (action.type) {
     case Types.Add:
       return [...state, action.payload];
     case Types.Delete:
       return [];
+    default:
+      return state;
+  }
+};
+
+type UserPayload = {
+  [Types.Login]: UserType;
+};
+
+export type UserActions = ActionMap<UserPayload>[keyof ActionMap<UserPayload>];
+
+export const userReducer = (
+  state: UserType,
+  action: ProductActions | ShoppingCartActions | UserActions
+): UserType => {
+  switch (action.type) {
+    case Types.Login:
+      return action.payload;
     default:
       return state;
   }

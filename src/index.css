@@ -9,6 +9,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffc8a1;
+  background-color: #ffc8a1 !important;
   padding: 30px;
 }

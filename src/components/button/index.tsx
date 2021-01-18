@@ -11,7 +11,12 @@ function Button({
   return (
     <MaterialButton
       variant="contained"
-      style={{ color: "white", borderRadius: 20, backgroundColor: "black" }}
+      style={{
+        color: "white",
+        borderRadius: 20,
+        backgroundColor: "black",
+        width: "100%",
+      }}
       onClick={onClick}
     >
       {title}

@@ -4,6 +4,8 @@ import {
   shoppingCartReducer,
   ProductActions,
   ShoppingCartActions,
+  userReducer,
+  UserActions,
 } from "./reducers";
 
 export type ProductType = {
@@ -17,30 +19,38 @@ export type ProductType = {
   phone: string;
 };
 
+export type UserType = {
+  email?: string;
+  password?: string;
+};
+
 type InitialStateType = {
   products: ProductType[];
   shoppingCart: ProductType[];
+  user: UserType;
 };
 
 const initialState = {
   products: [],
   shoppingCart: [],
+  user: {},
 };
 
 const AppContext = createContext<{
   state: InitialStateType;
-  dispatch: Dispatch<ProductActions | ShoppingCartActions>;
+  dispatch: Dispatch<ProductActions | ShoppingCartActions | UserActions>;
 }>({
   state: initialState,
   dispatch: () => null,
 });
 
 const mainReducer = (
-  { products, shoppingCart }: InitialStateType,
-  action: ProductActions | ShoppingCartActions
+  { products, shoppingCart, user }: InitialStateType,
+  action: ProductActions | ShoppingCartActions | UserActions
 ) => ({
   products: productReducer(products, action),
   shoppingCart: shoppingCartReducer(shoppingCart, action),
+  user: userReducer(user, action),
 });
 
 const AppProvider: React.FC = ({ children }) => {
